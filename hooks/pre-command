@@ -20,7 +20,6 @@ if [[ "${BUILDKITE_PLUGIN_DOCKER_SERVICE_NETWORK:-host}" != "host" ]]; then
       docker network create --driver=bridge "${BUILDKITE_PLUGIN_DOCKER_SERVICE_NETWORK}"
     fi
   ) 9>/tmp/docker-service-buildkite-plugin.lock
-  ) 
 fi
 
 docker_cmd="${docker_cmd} --network=${BUILDKITE_PLUGIN_DOCKER_SERVICE_NETWORK:-host}"
